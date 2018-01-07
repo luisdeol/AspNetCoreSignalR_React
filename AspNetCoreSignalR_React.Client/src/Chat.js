@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+﻿import React, { Component } from 'react';
 import { HubConnection } from '@aspnet/signalr-client';
 
 class Chat extends Component {
@@ -10,13 +10,13 @@ class Chat extends Component {
       message: '',
       messages: [],
       hubConnection: null,
+      chatRoom: '4FantasticFriends'
     };
   }
 
   componentDidMount = () => {
     const nick = window.prompt('Your name:', 'John');
-
-    const hubConnection = new HubConnection('http://localhost:5000/chat');
+    const hubConnection = new HubConnection('http://localhost:5000/chat/');
 
     this.setState({ hubConnection, nick }, () => {
       this.state.hubConnection
@@ -24,7 +24,7 @@ class Chat extends Component {
         .then(() => console.log('Connection started!'))
         .catch(err => console.log('Error while establishing connection :('));
 
-      this.state.hubConnection.on('sendToAll', (nick, receivedMessage) => {
+      this.state.hubConnection.on('sendToAll'+this.state.chatRoom, (nick, receivedMessage, chatRoom) => {
         const text = `${nick}: ${receivedMessage}`;
         const messages = this.state.messages.concat([text]);
         this.setState({ messages });
@@ -34,7 +34,7 @@ class Chat extends Component {
 
   sendMessage = () => {
     this.state.hubConnection
-      .invoke('sendToAll', this.state.nick, this.state.message)
+      .invoke('sendToAll', this.state.nick, this.state.message, this.state.chatRoom)
       .catch(err => console.error(err));
 
       this.setState({message: ''});      
@@ -43,6 +43,8 @@ class Chat extends Component {
   render() {
     return (
       <div>
+        <h1>{this.state.chatRoom}</h1> 
+        <h2>{this.state.nick}</h2>
         <br />
         <input
           type="text"
