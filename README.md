@@ -3,8 +3,8 @@
 
 ## Requirements
 
-* [.NET Core 2.0](https://www.microsoft.com/net/learn/get-started/windows)
-* [Node.js / npm](https://nodejs.org/en/)
+* [.NET Core SDK](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-2.1.3-windows-x64-installer)
+* [Node.js / npm](https://nodejs.org/dist/v8.9.4/node-v8.9.4-x64.msi)
 
 ## Making things work
 
