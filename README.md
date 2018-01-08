@@ -13,7 +13,7 @@
 *cd* into the **AspNetCoreSignalR_React.Client** and run
 ```
 npm install
-npm run`
+npm run
 ```
 
 *cd* into the **AspNetCoreSignalR_React.Server** folder and run
