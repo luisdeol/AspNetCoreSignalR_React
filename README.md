@@ -3,8 +3,8 @@
 
 ## Requirements
 
-* .NET Core 2.0
-* Node.js / npm
+* [.NET Core 2.0](https://www.microsoft.com/net/learn/get-started/windows)
+* [Node.js / npm](https://nodejs.org/en/)
 
 ## Making things work
 
