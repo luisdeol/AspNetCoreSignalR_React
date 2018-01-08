@@ -21,4 +21,4 @@ You can change the chat room name by editing the *chatRoom* state propety in **C
 
 
 
-Now you can open the *http://localhost:3000/ url in two tabs and check it out how the messages arrive in real-time from the SignalR Hub to the React app.S
+Now you can open the http://localhost:3000/ url in two tabs and check it out how the messages arrive in real-time from the SignalR Hub to the React app.
